@@ -1,10 +1,4 @@
 // RedRock-CreateActor.c
-//
-// The following variables are defined for RedRock
-// int walkLeft;
-// int startX;
-// int endX;
-// int Status;
 
 walkLeft = false;
 startX = x;

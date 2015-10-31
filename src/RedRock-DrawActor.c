@@ -19,7 +19,7 @@ else
         flipX(true);
         x = endX;
         walkLeft = true;
-        animpos = 1; 
+        animpos = 1;
     }
 }
 

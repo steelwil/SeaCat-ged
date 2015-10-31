@@ -1,5 +1,5 @@
 int d = 4.1666666; // 100/4/6
-
+
 if (Player.percentageAir > 100 - cloneindex*4*d - d)
 {
     animpos = 0;
