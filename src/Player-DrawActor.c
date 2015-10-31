@@ -10,14 +10,14 @@ if (IsLeft (key))
     flipX (true);
     //animpos = STEP1; // swap to STEP2 every 100ms or 3 frames
     animpos = (frame / 5) % 2 + 1; // STEP1, STEP2
-    x -= 5;
+    x -= 3;
     action = true;
 }
 if (IsRight (key))
 {
     flipX (false);
     animpos = (frame / 5) % 2 + 1; // STEP1, STEP2
-    x += 5;
+    x += 3;
     action = true;
 }
 if (IsBlow (key))
@@ -25,9 +25,13 @@ if (IsBlow (key))
     if (percentageAir > 0)
     {
         percentageAir -= 2;
-        animpos = BLOWDOWN;
-        y -= 5;
+        animpos = BLOW; // default sprite
         action = true;
+        if(IsDown (key))
+        {
+            animpos = BLOWDOWN;
+            y-=2;
+        }
     }
 }
 if (IsSuck (key))
@@ -38,9 +42,13 @@ if (IsSuck (key))
         {
             animpos = SUCKUP;
         }
+        else if (IsDown (key))
+        {
+            animpos = SUCKDOWN;
+        }
         else
         {
-            animpos = SUCK;
+          animpos = SUCK;
         }
 
         action = true;
@@ -68,7 +76,7 @@ while (!CollisionFree ("Event Actor", x, y))
     }
     if (CollisionFree ("Event Actor", x, y))
         break;
- 
+
     if (y > yprevious)
     {
         y--;
