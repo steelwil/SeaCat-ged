@@ -119,3 +119,7 @@ else if (y - view.y > 192 )
 {
     view.y = y - 192;
 }
+
+// WIP this needs to be fixed
+background1.x = view.x * 0.8 + 330;
+background1.y = view.y * 0.8 + 31;
