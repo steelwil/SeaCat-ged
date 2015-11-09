@@ -120,6 +120,8 @@ else if (y - view.y > 192 )
     view.y = y - 192;
 }
 
+//view.x = 0; // the view's xy is on the top left
+//view.y = 240;
 // WIP this needs to be fixed
-background1.x = view.x * 0.8 + 330;
-background1.y = view.y * 0.8 + 31;
+background1.x = view.x * 0.8 + background1.width/2;
+background1.y = view.y * 0.8 + (background1.height - view.height) - (background1.height - view.height)*0.8;  // 48
